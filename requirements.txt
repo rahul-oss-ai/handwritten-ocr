@@ -1,0 +1,6 @@
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pypdf>=4.0.0
+chandra-ocr>=0.1.8
+pyyaml>=6.0.1
+python-multipart>=0.0.9
