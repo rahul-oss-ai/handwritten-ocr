@@ -138,6 +138,48 @@
         }
       }
     },
+    "/jobs/{job_id}/accuracy": {
+      "get": {
+        "summary": "Get Job Accuracy",
+        "description": "Compare the original document and OCR output for this job using the GPT-OSS 120B model\n(Together AI). Returns accuracy metrics and a list of mismatches with reasons.\nRequires TOGETHER_API_KEY to be set.",
+        "operationId": "get_job_accuracy_jobs__job_id__accuracy_get",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Job Accuracy Jobs  Job Id  Accuracy Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/": {
       "get": {
         "summary": "Root",

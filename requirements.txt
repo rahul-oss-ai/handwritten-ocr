@@ -1,3 +1,4 @@
+# Requires Python >=3.10 (chandra-ocr does not support 3.9)
 fastapi>=0.109.0
 uvicorn[standard]>=0.27.0
 pypdf>=4.0.0

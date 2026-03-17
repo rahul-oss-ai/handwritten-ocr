@@ -13,10 +13,17 @@ This service exposes a FastAPI API that:
   - returns: `{ "job_id": "<id>", "status": "queued" }`
 - **Status**: `GET /jobs/{job_id}`
 - **Download zip**: `GET /jobs/{job_id}/result`
+- **Accuracy**: `GET /jobs/{job_id}/accuracy` — compares original document vs OCR output using Together AI’s **GPT-OSS 120B**; returns `overall_accuracy_score`, `summary`, and `mismatches` (what did not match and why). Requires `TOGETHER_API_KEY`.
 
 OpenAPI docs:
 - Swagger UI: `/docs`
 - OpenAPI files: `openapi.json`, `openapi.yaml` (regenerate with `python generate_openapi.py`)
+
+## Environment variables
+
+| Variable | Required | Description |
+|--------|----------|-------------|
+| `TOGETHER_API_KEY` | For `/jobs/{job_id}/accuracy` | Together AI API key for GPT-OSS 120B comparison. Get one at [Together AI](https://www.together.ai/). |
 
 ## Important production notes
 
